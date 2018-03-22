@@ -29,7 +29,8 @@ public class VenuesActivity extends AppCompatActivity implements VenueAdapter.Ve
 
         mAdapter = new VenueAdapter(this, this);
 
-        mVenues = getIntent().getParcelableArrayListExtra("VENUES");
+        AmexApp appState = (AmexApp) getApplicationContext();
+        mVenues = appState.mVenues;
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
